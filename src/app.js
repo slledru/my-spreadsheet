@@ -59,6 +59,9 @@ console.log(maxColumns);
     input.setAttribute('type', 'text')
     input.setAttribute('name', `${row}_${col}`)
     input.setAttribute('id', `${row}_${col}`)
+    if (row === 0 && col === 0) {
+      setTimeout(() => input.focus(), 0)
+    }
     td.appendChild(input)
     return td
   }
