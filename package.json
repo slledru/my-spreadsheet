@@ -1,0 +1,20 @@
+{
+  "name": "my-spreadsheet",
+  "version": "1.0.0",
+  "description": "Keyboard navigation for spreadsheet using vanilla javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "open index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slledru/my-spreadsheet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slledru/my-spreadsheet/issues"
+  },
+  "homepage": "https://github.com/slledru/my-spreadsheet#readme"
+}
