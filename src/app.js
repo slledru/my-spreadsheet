@@ -1,9 +1,7 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener('DOMContentLoaded', function(event) {
   const maxColumns = 'T'.charCodeAt(0) - 'A'.charCodeAt(0) + 1
   const maxRows = 37
 
-console.log(maxColumns);
-  console.log("DOM fully loaded and parsed");
   const table = createTable()
   const columnHeader = createColumnHeader()
   table.appendChild(columnHeader)
@@ -13,6 +11,14 @@ console.log(maxColumns);
   }
   const body = document.getElementsByTagName('body')[0]
   body.appendChild(table)
+
+  table.addEventListener('click', (event) => {
+    event.preventDefault()
+    if (event.target.classList.contains('cell')) {
+      console.log(event.target)
+      event.target.focus()
+    }
+  })
 
   function createTable() {
     const table = createElement('table')
@@ -55,14 +61,9 @@ console.log(maxColumns);
   function createColumn(row, col) {
     const td = createElement('td')
     td.classList.add('cell')
-    const input = createElement('input')
-    input.setAttribute('type', 'text')
-    input.setAttribute('name', `${row}_${col}`)
-    input.setAttribute('id', `${row}_${col}`)
     if (row === 0 && col === 0) {
-      setTimeout(() => input.focus(), 0)
+      setTimeout(() => td.focus(), 0)
     }
-    td.appendChild(input)
     return td
   }
 });
